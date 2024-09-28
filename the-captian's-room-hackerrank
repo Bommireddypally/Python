@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+group_size = int(input())
+room_nums = map(int, input().split())
+
+captain = set()
+group = set()
+
+for numm in room_nums:
+  
+  if numm in captain:
+    captain.remove(numm)
+    group.add(numm)
+    
+  elif numm not in group:
+    captain.add(numm)
+
+print(captain.pop())
